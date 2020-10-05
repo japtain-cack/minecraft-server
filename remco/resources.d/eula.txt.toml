@@ -1,0 +1,6 @@
+[[template]]
+  src = "${REMCO_TEMPLATE_DIR}/eula.txt"
+  dst = "${MC_HOME}/server/eula.txt"
+  make_directories = true
+  mode = "0644"
+
