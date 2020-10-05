@@ -24,7 +24,7 @@ The `server.properties` file will be overwritten every time the container is lau
 
 Use this `docker run` command to launch a container with a few customized `server.properties`.
 
- $ `docker run -d -it --name=mc -v /opt/mcpe/world1:/home/minecraft/server -p 19132-19133:19132-19133/udp -p 19132-19133:19132-19133/tcp -e ONLINE-MODE=false -e ALLOW-CHEATS=true -e SERVER-NAME=mcpe.example.org nsnow/minecraft-server:latest`
+ $ `docker run -d -it --name=minecraft -v /opt/minecraft/world1:/home/minecraft/server -p 25565:25565/udp -p 25565:25565/tcp -e MINECRAFT_ONLINE-MODE=false -e MINECRAFT_SERVER-IP=minecraft.example.org nsnow/minecraft-server:latest`
 
 
 ## Additional Docker commands
@@ -35,17 +35,17 @@ Use this `docker run` command to launch a container with a few customized `serve
 
 **docker logs**
 
-`docker logs mc`
+`docker logs minecraft`
 
 **attach to the minecraft server console**
 
 you don't need any rcon nonsense with docker attach!
 
-`docker attach mc`
+`docker attach minecraft`
 
 **exec into the container's bash console**
 
-`docker exec mc bash`
+`docker exec minecraft bash`
 
 
 **NOTE**: referencing containers by name is only possible if you specify the `--name` flag in your docker run command.
@@ -64,11 +64,11 @@ By default restarting the container will pull down the latest version.
 
 However, if you need to version pin your container, use the following environment variable override.
 
-* SPIGOT_VERSION=1.16.3
+* `SPIGOT_VERSION=1.16.3`
 
 **Set user and/or group id (optional)**
-* UID=1000
-* GUID=1000
+* `MINECRAFT_UID=1000`
+* `MINECRAFT_GUID=1000`
 
 ### Template server.properties
 This project uses [Remco config management](https://github.com/HeavyHorst/remco).
