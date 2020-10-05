@@ -24,8 +24,8 @@ ENV LC_ALL C.UTF-8
 
 ENV MINECRAFT_VERSION=
 ENV MC_HOME=/home/minecraft
-ENV UID=1000
-ENV GUID=1000
+ENV MINECRAFT_UID=1000
+ENV MINECRAFT_GUID=1000
 ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/bin/java
 ENV JAVA_MEMORY=512
 
@@ -38,8 +38,8 @@ RUN apt-get -y update && apt-get -y upgrade && apt-get -y install \
     gnupg2 \
     openjdk-11-jre-headless
 
-RUN groupadd -g $GUID minecraft && \
-    useradd -s /bin/bash -d /home/minecraft -m -u $UID -g minecraft minecraft && \
+RUN groupadd -g $MINECRAFT_GUID minecraft && \
+    useradd -s /bin/bash -d /home/minecraft -m -u $MINECRAFT_UID -g minecraft minecraft && \
     passwd -d minecraft && \
     echo "minecraft ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/minecraft
 
