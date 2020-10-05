@@ -79,7 +79,7 @@ The remco tempate uses keys. This means you should see a string like `"/minecraf
 This directly maps to a environment variable, the `/` becomes an underscore basically. The other value in the getv() function is the default value.
 For instance, `"/minecraft/some-option"` will map to the environment variable `MINECRAFT_SOME-OPTION`.
 
-getv("/minecraft/some-option", "default-value")
+`getv("/minecraft/some-option", "default-value")`
 
 becomes
 
