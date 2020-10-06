@@ -1,7 +1,7 @@
 # minecraft-server
 Run a minecraft spigot server in a Docker container.
 
-Now with automated server updates. Just restart the container.
+Now with automated server updates and smart spigot compiling logic (see setting spigot version below).
 
 [![Docker Automated build](https://img.shields.io/docker/automated/nsnow/minecraft-server.svg)](https://hub.docker.com/r/nsnow/minecraft-server)
 [![Docker Stars](https://img.shields.io/docker/stars/nsnow/minecraft-server.svg)](https://hub.docker.com/r/nsnow/minecraft-server)
@@ -80,8 +80,10 @@ use `ctrl+p` then `ctrl+q` to quit.
 By default restarting the container will pull down the latest version.
 However, **you should version pin your spigot version**, use the following environment variable override.
 
-If you don't set a version, it can't know which version you want and will compile spigot from scratch each tiem.
+If you don't set a version, it can't know which version you want and will compile spigot from scratch each time.
 **This will drastically increase your container start times**.
+
+To update, simply set the new version number and restart your container!
 
 * `SPIGOT_VERSION=latest`
 
