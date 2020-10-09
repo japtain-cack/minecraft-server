@@ -15,7 +15,7 @@ RUN go install github.com/HeavyHorst/remco/cmd/remco
 FROM ubuntu:bionic
 LABEL author="Nathan Snow"
 LABEL description="Minecraft Spigot server (Minecraft server java edition)"
-user root
+USER root
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV TINI_VERSION v0.19.0
