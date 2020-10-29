@@ -54,9 +54,9 @@ docker run -d -it --name=minecraft -v /opt/minecraft/world1:/home/minecraft/serv
 
 **attach to the minecraft server console**
 
-you don't need any rcon nonsense with docker attach!
+You don't need any rcon nonsense with docker attach!
 
-use `ctrl+p` then `ctrl+q` to quit.
+Use `ctrl+p` then `ctrl+q` to quit.
 
 `docker attach minecraft`
 
