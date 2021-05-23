@@ -31,7 +31,7 @@ if [ -f ${MC_HOME}/server/spigot-${SPIGOT_VERSION}.jar ]; then
 
   cd ${MC_HOME}/server && \
     chmod +x *.jar && \
-    java -Xms${JAVA_MEMORY}M -Xmx${JAVA_MEMORY}M -XX:+UseG1GC -jar spigot*.jar nogui
+    java -Xms${JAVA_MEMORY}M -Xmx${JAVA_MEMORY}M -XX:+UseG1GC -jar spigot-${SPIGOT_VERSION}.jar nogui
 else
   echo "!!! No spigot jar found !!!"
 fi
