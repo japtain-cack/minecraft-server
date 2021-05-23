@@ -24,7 +24,7 @@ else
     java -Xmx512M -jar buildtools.jar --rev ${SPIGOT_VERSION} --output-dir ${MC_HOME}/server
 fi
 
-if [ -f ${MC_HOME}/server/spigot-*.jar ]; then
+if [ -f ${MC_HOME}/server/spigot-${SPIGOT_VERSION}.jar ]; then
   echo -e "\nStarting spigot..."
 
   remco
